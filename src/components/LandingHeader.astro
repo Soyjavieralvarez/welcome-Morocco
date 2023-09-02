@@ -1,0 +1,27 @@
+---
+import Logo from "./Logo.astro";
+
+---
+
+
+
+<header class="py-6 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white">
+    <div class="flex flex-grow basis-0">
+    <Logo />
+</div>
+<nav>
+<ul class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+    <li><a href="#">Información</a></li>
+    <li><a href="#">Excursiones</a></li>
+    <li><a href="#">Riads</a></li>
+    <li><a href="#">Ciudades</a></li>
+    
+</ul>
+</nav>
+<nav class="flex flex-grow justify-end">
+<ul class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+<li><a href="#">Contacto</a></li>
+<li><a href="#">Tu viaje</a></li>
+</ul>
+</nav>
+</header>

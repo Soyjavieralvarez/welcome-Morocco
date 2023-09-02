@@ -1,4 +1,14 @@
 ---
+import HeroSection from '../components/HeroSection.astro';
+import LandingHeader from '../components/LandingHeader.astro';
+import Info from '../components/Info.astro';
+import Excursiones from '../components/Excursiones.astro';
+import Riads from '../components/Riads.astro';
+import Ciudades from '../components/Ciudades.astro';
+
+
+
+
 import Layout from '../layouts/Layout.astro';
 
 ---
@@ -6,43 +16,24 @@ import Layout from '../layouts/Layout.astro';
 
 
 <Layout title="Welcome to Morocco">
-	<main>
-		<header class="py-6 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white">
-			<div class="flex flex-grow basis-0">
-			<img class="h-20"
-          class="information-box_img"
-          src="./src/Assets/Air-Travel.png"
-          alt="Logo Air Travel"
-        />
-	</div>
-	<nav>
-		<ul class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
-			<li><a href="#">Información</a></li>
-			<li><a href="#">Excursiones</a></li>
-			<li><a href="#">Riads</a></li>
-			<li><a href="#">Ciudades</a></li>
-			
-		</ul>
-	</nav>
-	<nav class="flex flex-grow justify-end">
-		<ul class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
-		<li><a href="#">Contacto</a></li>
-		<li><a href="#">Tu viaje</a></li>
-	</ul>
-	</nav>
-		</header>
-		<section class="bg-black h-screen w-screen text-center overflow-hidden ">
-			<header class="z-30 relative">
-				<h2 class="text-white pt-40 text-4xl font-medium">Viajes a Marruecos guiados</h2>
-			<p class="text-white pt-2">Disfrute al máximo sin preocupaciones</p>
-			</header>
-
-			<footer class="z-30 relative">
-				<a class="text-white" href="#">Pida información sin compromiso</a>
-			</footer>
-			<div class="absolute top-0 bottom-0 h-full z-10">
-			<video autoplay muted loop src="/video-essaouira-web.webm"></video>
+	<LandingHeader />
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
+		<div class="snap-center">
+			<HeroSection />
 		</div>
+		<div class="snap-center">
+			<Info />
+		</div>
+		<div class="snap-center">
+			<Excursiones />
+		</div>
+		<div class="snap-center">
+			<Riads />
+		</div>
+		<div class="snap-center">
+			<Ciudades />
+		</div>
+		
 		</main>
 
 </Layout>

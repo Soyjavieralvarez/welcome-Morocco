@@ -10,14 +10,80 @@ import Logo from "./Logo.astro";
     <Logo />
 </div>
 <nav>
-<ul class="flex text-xl [&>li>a]:transition-color [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-bold [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
-    <li><a href="#">Información</a></li>
-    <li><a href="#">Excursiones</a></li>
-    <li><a href="#">Riads</a></li>
-    <li><a href="#">Ciudades</a></li>
-    <li><a href="#">Tu viaje</a></li>
-    <li><a href="#">Contacto</a></li>
-
+  <div class="lg:hidden">
+    <button id="mobile-menu-button" class="block text-xl font-bold px-4 py-2 transition-color duration-500 text-current">
+      Menú
+    </button>
+    <ul id="mobile-menu" class="hidden">
+      <li><a href="#">Información</a></li>
+      <li><a href="#">Excursiones</a></li>
+      <li><a href="#">Riads</a></li>
+      <li><a href="#">Ciudades</a></li>
+      <li><a href="#">Tu viaje</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </div>
+  <ul class="text-xl lg:flex lg:text-lg hidden" id="desktop-menu">
+    <li class="mb-2 lg:mb-0">
+      <a href="#" class="block transition-color duration-500 text-current font-bold px-4 py-2">Información</a>
+    </li>
+    <li class="mb-2 lg:mb-0">
+      <a href="#" class="block transition-color duration-500 text-current font-bold px-4 py-2">Excursiones</a>
+    </li>
+    <li class="mb-2 lg:mb-0">
+      <a href="#" class="block transition-color duration-500 text-current font-bold px-4 py-2">Riads</a>
+    </li>
+    <li class="mb-2 lg:mb-0">
+      <a href="#" class="block transition-color duration-500 text-current font-bold px-4 py-2">Ciudades</a>
+    </li>
+    <li class="mb-2 lg:mb-0">
+      <a href="#" class="block transition-color duration-500 text-current font-bold px-4 py-2">Tu viaje</a>
+    </li>
+    <li class="mb-2 lg:mb-0">
+      <a href="#" class="block transition-color duration-500 text-current font-bold px-4 py-2">Contacto</a>
+    </li>
+  </ul>
+  
+  <style>
+    /* Estilos para el botón y menú desplegable en dispositivos móviles */
+    #mobile-menu-button {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  
+    #mobile-menu {
+      display: none;
+    }
+  
+    /* Mostrar/ocultar el menú desplegable en dispositivos móviles */
+    #mobile-menu.active {
+      display: block;
+    }
+  
+    @media (max-width: 767px) {
+      /* Ocultar el menú de escritorio en dispositivos móviles */
+      #desktop-menu {
+        display: none;
+      }
+  
+      /* Mostrar el botón en dispositivos móviles */
+      #mobile-menu-button {
+        display: block;
+      }
+    }
+  </style>
+  
+  <script>
+    // Agregar funcionalidad de clic al botón para mostrar/ocultar el menú en dispositivos móviles
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
     <div
     id="menu-backdrop"
     class={`
@@ -28,6 +94,8 @@ import Logo from "./Logo.astro";
         ease-in-out opacity-0 -z-10
         `}
     />
+
+    
 </header>
 
 <script>

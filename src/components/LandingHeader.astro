@@ -5,23 +5,48 @@ import Logo from "./Logo.astro";
 
 
 
-<header class="py-6 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white">
+<header id="landing-header" class="py-6 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white">
     <div class="flex flex-grow basis-0">
     <Logo />
 </div>
 <nav>
-<ul class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+<ul class="flex text-xl [&>li>a]:transition-color [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-bold [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
     <li><a href="#">Información</a></li>
     <li><a href="#">Excursiones</a></li>
     <li><a href="#">Riads</a></li>
     <li><a href="#">Ciudades</a></li>
-    
-</ul>
-</nav>
-<nav class="flex flex-grow justify-end">
-<ul class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
-<li><a href="#">Contacto</a></li>
-<li><a href="#">Tu viaje</a></li>
-</ul>
-</nav>
+    <li><a href="#">Tu viaje</a></li>
+    <li><a href="#">Contacto</a></li>
+
+    <div
+    id="menu-backdrop"
+    class={`
+        absolute bg-black/5 backdrop-blur-lg rounded 
+        left-[var(--left)] top-[var(--top)] 
+        w-[var(--width)] h-[var(--height)] 
+        `}
+    />
 </header>
+
+<script>
+    const $header = document.querySelector('#landing-header') as HTMLElement
+
+    const oberserverOptions = {
+        root: null, 
+        rootMargin: '0px', // en cuanto se vea el elemento
+        threshold: 0.5, // porcentaje de visibildad
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const { isIntersecting } = entry 
+            if(isIntersecting) {
+                const color = entry.target.getAttribute('data-header-color')
+                $header.style.color = color
+            }
+        })
+    }, oberserverOptions);
+
+    const $sections = document.querySelectorAll(".landing-section")
+    $sections.forEach((section) => observer.observe(section));
+</script>

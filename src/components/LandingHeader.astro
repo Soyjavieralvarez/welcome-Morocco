@@ -45,34 +45,38 @@ import Logo from "./Logo.astro";
   </ul>
   
   <style>
-    /* Estilos para el botón y menú desplegable en dispositivos móviles */
-    #mobile-menu-button {
-      display: block;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-  
-    #mobile-menu {
-      display: none;
-    }
-  
-    /* Mostrar/ocultar el menú desplegable en dispositivos móviles */
-    #mobile-menu.active {
-      display: block;
-    }
-  
-    @media (max-width: 767px) {
-      /* Ocultar el menú de escritorio en dispositivos móviles */
-      #desktop-menu {
-        display: none;
-      }
-  
-      /* Mostrar el botón en dispositivos móviles */
-      #mobile-menu-button {
-        display: block;
-      }
-    }
+    /* Estilo para el botón de menú */
+#mobile-menu-button {
+  background-color: #333; /* Cambia el color de fondo según tu preferencia */
+  color: #fff; /* Cambia el color del texto según tu preferencia */
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo para la lista de menú desplegable */
+#mobile-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+#mobile-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+#mobile-menu li a {
+  display: block;
+  padding: 10px 20px; /* Ajusta el espaciado según tu preferencia */
+  text-decoration: none;
+  color: #333; /* Cambia el color del texto según tu preferencia */
+  transition: background-color 0.3s;
+}
+
+#mobile-menu li a:hover {
+  background-color: #555; /* Cambia el color de fondo al pasar el mouse según tu preferencia */
+  color: #fff; /* Cambia el color del texto al pasar el mouse según tu preferencia */
+}
   </style>
   
   <script>

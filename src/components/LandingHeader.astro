@@ -10,19 +10,28 @@ import Logo from "./Logo.astro";
     <Logo />
 </div>
 <nav>
+
   <div class="lg:hidden">
     <button id="mobile-menu-button" class="block text-xl font-bold px-4 py-2 transition-color duration-500 text-current">
-      Menú
+        Menú
     </button>
-    <ul id="mobile-menu" class="hidden">
-      <li><a href="#">Información</a></li>
-      <li><a href="#">Excursiones</a></li>
-      <li><a href="#">Riads</a></li>
-      <li><a href="#">Ciudades</a></li>
-      <li><a href="#">Tu viaje</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </div>
+    <div id="mobile-menu" class="hidden">
+        <button id="close-menu-button" class="text-xl font-bold px-4 py-2 transition-color duration-500 text-current">
+            X
+        </button>
+        <ul>
+            <li><a href="#">Información</a></li>
+            <li><a href="#">Excursiones</a></li>
+            <li><a href="#">Riads</a></li>
+            <li><a href="#">Ciudades</a></li>
+            <li><a href="#">Tu viaje</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
   <ul class="text-xl lg:flex lg:text-lg hidden" id="desktop-menu">
     <li class="mb-2 lg:mb-0">
       <a href="#" class="block transition-color duration-500 text-current font-bold px-4 py-2">Información</a>
@@ -43,50 +52,72 @@ import Logo from "./Logo.astro";
       <a href="#" class="block transition-color duration-500 text-current font-bold px-4 py-2">Contacto</a>
     </li>
   </ul>
-  
+
+
   <style>
-    /* Estilo para el botón de menú */
-#mobile-menu-button {
-  background-color: #333; /* Cambia el color de fondo según tu preferencia */
-  color: #fff; /* Cambia el color del texto según tu preferencia */
-  border: none;
-  cursor: pointer;
+   #mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Oculta el menú fuera del área visible */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con transparencia */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s; /* Agrega una transición suave para mostrar/ocultar el menú */
 }
 
-/* Estilo para la lista de menú desplegable */
-#mobile-menu {
-  display: none;
-  list-style: none;
-  padding: 0;
+#close-menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#close-menu-button:hover {
+    color: #ddd; /* Cambia el color al pasar el mouse si lo deseas */
+}
+
+#mobile-menu ul {
+    list-style: none;
+    padding: 0;
 }
 
 #mobile-menu li {
-  margin: 0;
-  padding: 0;
+    margin: 10px 0;
 }
 
 #mobile-menu li a {
-  display: block;
-  padding: 10px 20px; /* Ajusta el espaciado según tu preferencia */
-  text-decoration: none;
-  color: #333; /* Cambia el color del texto según tu preferencia */
-  transition: background-color 0.3s;
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 #mobile-menu li a:hover {
-  background-color: #555; /* Cambia el color de fondo al pasar el mouse según tu preferencia */
-  color: #fff; /* Cambia el color del texto al pasar el mouse según tu preferencia */
+    background-color: #333; /* Cambia el color de fondo al pasar el mouse según tu preferencia */
 }
   </style>
   
   <script>
-    // Agregar funcionalidad de clic al botón para mostrar/ocultar el menú en dispositivos móviles
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-  
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
+    var mobileMenuButton = document.getElementById("mobile-menu-button");
+var mobileMenu = document.getElementById("mobile-menu");
+var closeMenuButton = document.getElementById("close-menu-button");
+
+mobileMenuButton.addEventListener("click", function () {
+    mobileMenu.style.left = "0"; /* Muestra el menú deslizándolo desde la izquierda */
+});
+
+closeMenuButton.addEventListener("click", function () {
+    mobileMenu.style.left = "-100%"; /* Oculta el menú deslizándolo hacia la izquierda */
+});
   </script>
     <div
     id="menu-backdrop"

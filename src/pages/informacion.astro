@@ -1,23 +1,85 @@
 ---
-import ButtonMenu from "../components/ButtonMenu.astro";
+import HeaderButton from "../components/HeaderButton.astro";
 ---
 <meta charset="UTF-8">
-<section
-  class="landing-section bg-black h-screen w-screen text-center overflow-hidden relative"
-  data-header-color="white"
->
-  <header class="z-30 relative">
-    <h2 class="text-white pt-40 text-4xl font-medium mb-10">
-      Esto es la parte de información
-    </h2>
-    <div>
-       <p>Aquí iría algo de información sobre los viajes</p>
+
+<div class="relative isolate overflow-hidden bg-white px-6 py-12 sm:py-16 lg:py-24 lg:px-0">
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+        <defs>
+          <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+            <path d="M100 200V.5M.5 .5H200" fill="none" />
+          </pattern>
+        </defs>
+        <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+          <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+        </svg>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+      </svg>
+    </div>
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 md:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+        <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+          <div class="lg:pr-4">
+            <div class="lg:max-w-lg">
+            <p class="text-base font-semibold leading-7 text-indigo-600">Información adicional sobre Marruecos</p>
+            <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Embárcate en un viaje hacia Marruecos, un país que se distingue por su diversidad paisajística y su riqueza cultural. Desde las emblemáticas kasbahs, fortificaciones de adobe, hasta las imponentes dunas del Sáhara teñidas de ocre, los exuberantes palmerales, las majestuosas montañas cubiertas de nieve y las laberínticas medinas y bazares, Marruecos es un destino que ofrece una experiencia única. Aquí te presentamos algunas razones por las cuales un viaje a Marruecos vale la pena.</h1>
+            <p class="mt-6 text-xl leading-8 text-gray-700">Marruecos, conocido oficialmente como el Reino de Marruecos, se encuentra en el noroeste de África, en la región del Magreb. Limita al norte con el mar Mediterráneo, al este y sureste con Argelia, al sur con la República Árabe Saharaui y al oeste con el océano Atlántico. Aunque Marruecos administra el Sáhara Occidental, la ONU lo considera un territorio no autónomo. La capital es Rabat, mientras que la ciudad más poblada es Casablanca.</p>
+          </div>
+        </div>
       </div>
-      <div class="flex justify-normal m-5">
-        <ButtonMenu/>
+      <div class="md:-ml-6 md:-mt-6 lg:mt-0 p-6 lg:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+        <img class="flex justify-center w-full max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 md:w-[calc(50%+20rem)] lg:w-[48rem] xl:w-[55rem]" src="https://www.viajesdesierto.com/wp-content/uploads/2021/01/Plaza-de-Marrakech-de-noche.jpg" alt="">
       </div>
-  </header>
-  <div class="absolute top-0 bottom-0 z-10 h-full w-full">
-    <img src="../Riads-2.jpg" alt="Model Y" class="h-full w-full object-cover object-center" />
+      <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+        <div class="lg:pr-4">
+          <div class="max-w-auto text-3xl leading-10 text-gray-700 lg:max-w-auto">
+            <h3  class="mt-8 font-bold">Ubicación y Geografía</h3>
+            <p class="mt-8">Marruecos, conocido oficialmente como el Reino de Marruecos, se encuentra en el noroeste de África, en la región del Magreb. Limita al norte con el mar Mediterráneo, al este y sureste con Argelia, al sur con la República Árabe Saharaui y al oeste con el océano Atlántico. Aunque Marruecos administra el Sáhara Occidental, la ONU lo considera un territorio no autónomo. La capital es Rabat, mientras que la ciudad más poblada es Casablanca.</p>
+            <p class="mt-8">Con una población de aproximadamente 36 millones de habitantes, el país se divide en 16 regiones, que a su vez se subdividen en 27 prefecturas y 45 provincias. La población está compuesta en su mayoría por árabes y bereberes, aunque también hay una significativa comunidad judía.</p>
+            <p class="mt-8">Marruecos cuenta con dos principales sistemas montañosos: el Rif, que bordea la costa mediterránea y alberga picos notables como el monte Tidighine con 2.452 metros de altura, y la cordillera del Atlas, que se divide en tres macizos: el Gran Atlas al sur, donde se encuentra la montaña más alta del país, el monte Tubkal de 4.180 metros; el Atlas central y el Anti Atlas que se extiende hasta la costa atlántica.</p>
+            <p class="mt-8">El país presenta una gran variedad de paisajes, desde el valle del Sebú entre el Rif y el Atlas Medio hasta las altas mesetas al este y el vasto desierto del Sáhara en el sur. Los ríos más importantes son el Oum-er-Rbia y el Sebú, que desembocan en el Atlántico, y el Muluya, que desemboca en el Mediterráneo.</p>
+
+            <h3  class="mt-8 font-bold">Idioma, Religión y Gobierno</h3>
+            <p class="mt-8">El idioma oficial de Marruecos es el árabe, y se hablan diferentes dialectos bereberes, como el tarifit, el tashelhit y el tamazight, principalmente en el Souss, el Rif y el Atlas. Además, la mayoría de los marroquíes hablan francés, que se utiliza en el ámbito comercial. También existe una pequeña población hispanohablante debido a la proximidad geográfica con España.</p>
+            <p class="mt-8">El islam es la religión oficial y el 98.3% de la población sigue la fe musulmana suní, con el rey como máxima autoridad religiosa. Marruecos es una monarquía constitucional con un Parlamento elegido por voto popular, y el rey Mohamed VI ejerce amplios poderes ejecutivos y lidera las fuerzas militares.</p>
+
+            <h3  class="mt-8 font-bold">Economía y Clima</h3>
+            <p class="mt-8">La economía marroquí se basa en servicios, agricultura e industria, incluyendo la minería, la producción de fosfatos, alimentos, cuero y textiles. El turismo también desempeña un papel importante en la economía, con una infraestructura turística que ofrece una amplia gama de opciones de viajes organizados y paquetes vacacionales.</p>
+            <p class="mt-8">El clima de Marruecos es diverso, con regiones que varían desde desérticas en el sur hasta mediterráneas en el norte y climas continentales en el interior. Las temperaturas oscilan entre los 10 y los 25 grados centígrados, aunque en algunas áreas del país pueden alcanzar los 50 grados en verano.</p>
+
+
+            <h3  class="mt-8 font-bold">Flora y Fauna</h3>
+            <p class="mt-8">Marruecos es conocido por su rica biodiversidad, con alrededor de 4,200 especies de flora. El país cuenta con la mayor cantidad de bosques en la región del Magreb, que albergan una variedad de árboles, como alcornoques, encinas, coníferas, enebros, cedros, abetos, pinos y argán, este último conocido por su aceite valioso. En las zonas más áridas, se encuentran palmerales de dátiles.</p>
+            <p class="mt-8">En cuanto a la fauna, Marruecos es hogar de diversas especies, incluyendo zorros, conejos, nutrias, ardillas, gacelas, jabalíes, babuinos, panteras, ibis eremita y víboras cornudas.</p>
+
+            <h3  class="mt-8 font-bold">Historia</h3>
+            <p class="mt-8">La historia de Marruecos se remonta a la antigüedad, con evidencia de presencia humana en la región desde el año 8000 a.C. A lo largo de los milenios, diversas civilizaciones, como los bereberes, los fenicios, los romanos y los árabes, dejaron su huella en Marruecos. El país también experimentó invasiones de visigodos, bizantinos y vándalos.</p>
+            <p class="mt-8">La llegada del islam en el siglo VII marcó un cambio significativo en la región, y los bereberes, judíos y cristianos convergieron en esta nueva religión. A través de la diplomacia, los líderes omeyas establecieron su dominio en el país en el siglo VIII.</p>
+            <p class="mt-8">La historia de Marruecos estuvo marcada por una sucesión de dinastías, como los Idrisíes, los Almorávides, los Almohades y los Meriníes. En el siglo XV, los portugueses y españoles comenzaron a colonizar partes de Marruecos.</p>
+            <p class="mt-8">El país finalmente logró la independencia en 1956, y desde entonces ha experimentado una serie de cambios políticos y económicos. El rey Mohamed VI, que ascendió al trono en 1999, ha implementado reformas democráticas, pero también ha enfrentado desafíos en términos de libertades civiles y protestas populares.</p>
+
+            <h3  class="mt-8 font-bold">Por qué Marruecos es el país más visitado de África</h3>
+            <p class="mt-8">Marruecos cautiva a los visitantes con su luz fascinante, que intensifica los colores y dota de nitidez, calidez y armonía a los paisajes. El país se tiñe de azul en el cielo y el mar, de verde en la vegetación exuberante y de ocre en el desierto, creando una paleta visualmente impactante.</p>
+            <p class="mt-8">Pero Marruecos no solo se trata de luz y color, sino que también rebosa vida, que se manifiesta plenamente en las bulliciosas calles y plazas de las ciudades, así como en la tranquilidad ensordecedora del desierto, un tesoro nacional que ofrece experiencias humanas únicas.</p>
+            <p class="mt-8">Además de la luz, los colores y la vida, Marruecos está impregnado de emociones, que se despiertan con la magia de los pequeños momentos, la esencia de las tradiciones y la hospitalidad de su gente.</p>
+            <p class="mt-8">Un viaje a Marruecos significa perderse en las intrincadas medinas, contemplar millones de estrellas en las noches frías del desierto, explorar los áridos paisajes de las montañas, saborear el té de menta y las especias, disfrutar de la danza del vientre, maravillarse con la arquitectura majestuosa de sus monumentos, pasear en dromedario, sumergirse en los cuentos de las mil y una noches, explorar cascadas, gargantas y ríos, rendirse al encanto de los riads, contemplar los turbantes índigo en el infinito Sáhara, relajarse en los hamams, descubrir vergeles fértiles de huertos y palmerales, visitar mezquitas, palacios, jardines y madrazas, y admirar los atardeceres cautivadores sobre las dunas. Marruecos es un destino único que ofrece experiencias inolvidables y un mundo diferente que espera ser explorado.</p>
+            <p class="mt-8">Marruecos es una tierra de sensualidad, embrujo, ostentación y exotismo. Es el Reino de las sensaciones y la joya del mundo árabe. Un viaje a Marruecos es un viaje a una fantástica ilusión hecha realidad.</p>
+
+
+
+
+
+
+
+
+
+
+                    <div class="flex justify-normal m-5">
+                        <HeaderButton />
+                    </div>
+                   
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
